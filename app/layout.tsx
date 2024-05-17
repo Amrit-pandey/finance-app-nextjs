@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { QueryProvider } from "@/providers/query-providers";
+import { SheetProvider } from "@/providers/sheet-providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
       <html lang="en">
         <body className={inter.className}>
           <QueryProvider>
+            <SheetProvider />
           {children}
           </QueryProvider>
         </body>
